@@ -57,8 +57,8 @@ Array.from(thumbDown).forEach(function(element) {
 Array.from(trash).forEach(function(element) {
       element.addEventListener('click', function(){
         const workout = this.parentNode.parentNode.childNodes[1].innerText
-        const sets = this.parentNode.parentNode.childNodes[3].innerText
-        const reps = this.parentNode.parentNode.childNodes[5].innerText
+        const sets = this.parentNode.parentNode.childNodes[5].innerText
+        const reps = this.parentNode.parentNode.childNodes[7].innerText
         fetch('delete', {
           method: 'delete',
           headers: {

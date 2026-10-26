@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>21 Savage Fans</title>
-  <link rel="shortcut icon" href="favicon.ico">
+  <title>Workout Log</title>
   <link rel="stylesheet" href="font-awesome.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <h1>Workout log </h1>
-  <h2>Why you trappin so hard?</h2>
+  <h2>Why you working so hard?</h2>
 
 
   <h3>Exercises</h3>
@@ -17,12 +16,12 @@
   <% for(var i=0; i<workouts.length; i++) {%>
     <li class="workout">
       <span><%= workouts[i].workout %></span>
-        <span><%= workouts[i].pounds %></span>
-      <span><%= workouts[i].sets %></span>
-      <span><%= workouts[i].reps %></span>
+        <span class="lbs"><%= workouts[i].pounds %></span>
+      <span class="sets"><%= workouts[i].sets %></span>
+      <span class="reps"><%= workouts[i].reps %></span>
       <span><i class="fa fa-plus" aria-hidden="true"></i></span>
       <span><i class="fa fa-minus" aria-hidden="true"></i></span>
-       <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+       <span><i class="fa fa-trash-o" aria-hidden="true"></i></span>
     </li>
   <% } %>
   </ul>
@@ -31,7 +30,7 @@
 
   <form action="/workouts" method="POST">
     <input type="text" placeholder="workout" name="workout">
-     <input type="text" placeholder="ILDS" name="pounds">
+     <input type="text" placeholder="lbs" name="pounds">
     <input type="text" placeholder="sets" name="sets">
     <input type="text" placeholder="reps" name="reps">
     <button type="submit">Submit</button>

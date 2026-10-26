@@ -4,3 +4,75 @@ body{
 h3{
   margin-top: 40px;
 }
+
+
+.lbs::after { content: " lbs"; }
+.sets::after { content: " sets"; }
+.reps::after { content: " reps"; }
+
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #222;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 8px;
+  width: 110px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 8px 16px;
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #444;
+}
+
+.workouts {
+  list-style: none;
+  padding: 0;
+}
+
+.workout {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #fff;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+}
+
+.workout span:first-child {
+  flex: 1;
+  font-weight: bold;
+}
+
+.fa-plus,
+.fa-minus,
+.fa-trash {
+  cursor: pointer;
+}
+
+.fa-trash:hover {
+  color: #c0392b;
+}
