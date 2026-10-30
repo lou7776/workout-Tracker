@@ -81,6 +81,3 @@ Open [http://localhost:3001](http://localhost:3001). The terminal should print `
 - Add a delete confirmation
 - Show the date on each workout
 
-## Author
-
-Built by [lou7776](https://github.com/lou7776).
