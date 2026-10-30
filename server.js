@@ -1,10 +1,12 @@
 //ask loen about this
+const { ObjectId } = require('mongodb')
+
 require('dotenv').config()
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const MongoClient = require('mongodb').MongoClient
-const { ObjectId } = require('mongodb')
+
 
 let db, collection;
 
@@ -34,7 +36,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/workouts', (req, res) => {
-  db.collection('workouts').insertOne({date: new Date().toLocaleDateString, workout: req.body.workout, 
+  db.collection('workouts').insertOne({date: new Date().toLocaleDateString(), workout: req.body.workout, 
     pounds: req.body.pounds,
     sets: req.body.sets, reps:req.body.reps }, (err, result) => {
     if (err) return console.log(err)
@@ -76,7 +78,7 @@ app.post('/workouts', (req, res) => {
 
 app.put('/sets', (req, res) => {
   db.collection('workouts')
-  .findOneAndUpdate({workout: req.body.workout, sets: req.body.sets, reps: req.body.reps}, {
+  .findOneAndUpdate({_id: ObjectId(req.body.id)}, {
     $set: {
       sets: (Number(req.body.sets) + req.body.change).toString()
     }
@@ -106,9 +108,8 @@ app.put('/sets', (req, res) => {
 
 app.delete('/delete', (req, res) => {
   console.log(req.body)
-  db.collection('workouts').findOneAndDelete({workout: req.body.workout,
-    sets: req.body.sets,
-    reps: req.body.reps}, (err, result) => {
+  db.collection('workouts').findOneAndDelete({_id: ObjectId(req.body.id)}
+  , (err, result) => {
     if (err) return res.send(500, err)
     res.send('Workout deleted!')
   })

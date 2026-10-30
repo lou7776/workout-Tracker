@@ -1,3 +1,4 @@
+
 const thumbUp = document.getElementsByClassName("fa-thumbs-up");
 const thumbDown = document.getElementsByClassName("fa-thumbs-down");
 const trash = document.getElementsByClassName("fa-trash-o");
@@ -56,19 +57,14 @@ Array.from(thumbDown).forEach(function(element) {
 
 Array.from(trash).forEach(function(element) {
       element.addEventListener('click', function(){
-        const workout = this.parentNode.parentNode.childNodes[1].innerText
-        const sets = this.parentNode.parentNode.childNodes[5].innerText
-        const reps = this.parentNode.parentNode.childNodes[7].innerText
+        const id = this.parentNode.parentNode.dataset.id
         fetch('delete', {
           method: 'delete',
           headers: {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-            'workout': workout,
-            'sets': sets,
-            'reps': reps,
-
+            'id': id
           })
         }).then(function (response) {
           window.location.reload()
@@ -80,18 +76,17 @@ Array.from(trash).forEach(function(element) {
 
 Array.from(plus).forEach(function(element) {
       element.addEventListener('click', function(){
-        const workout = this.parentNode.parentNode.childNodes[1].innerText
-        const sets = this.parentNode.parentNode.childNodes[3].innerText
-        const reps = this.parentNode.parentNode.childNodes[5].innerText
+        const id = this.parentNode.parentNode.dataset.id
+       const sets = this.parentNode.parentNode.childNodes[5].innerText
+       
         fetch('/sets', {
           method: 'put',
           headers: {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-            'workout': workout,
+            'id': id,
             'sets': sets,
-            'reps': reps,
             'change': 1
             // ask loen about this
           })
@@ -103,19 +98,17 @@ Array.from(plus).forEach(function(element) {
 
 
 Array.from(minus).forEach(function(element) {
-      element.addEventListener('click', function(){
-        const workout = this.parentNode.parentNode.childNodes[1].innerText
-        const sets = this.parentNode.parentNode.childNodes[3].innerText
-        const reps = this.parentNode.parentNode.childNodes[5].innerText
+      element.addEventListener('click', function(){  
+        const id = this.parentNode.parentNode.dataset.id
+        const sets = this.parentNode.parentNode.childNodes[5].innerText
         fetch('/sets', {
           method: 'put',
           headers: {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-            'workout': workout,
+            'id': id,
             'sets': sets,
-            'reps': reps,
             'change': -1
           })
         }).then(function (response) {

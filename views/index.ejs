@@ -14,7 +14,7 @@
   <h3>Exercises</h3>
   <ul class="workouts">
   <% for(var i=0; i<workouts.length; i++) {%>
-    <li class="workout">
+    <li class="workout" data-id="<%= workouts[i]._id %>">
       <span><%= workouts[i].workout %></span>
         <span class="lbs"><%= workouts[i].pounds %></span>
       <span class="sets"><%= workouts[i].sets %></span>
