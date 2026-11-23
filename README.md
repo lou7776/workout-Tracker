@@ -2,7 +2,7 @@
 
 A simple workout tracker built with Node, Express, EJS, and MongoDB. Log your exercises, adjust your sets with one click, and delete what you don't need. It was built from a class CRUD example and reworked into a workout app.
 
-Live demo: https://workout-tracker-24qo.onrender.com
+**Live demo:** https://workout-tracker-24qo.onrender.com
 
 
 
