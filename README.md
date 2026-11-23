@@ -4,6 +4,7 @@ A simple workout tracker built with Node, Express, EJS, and MongoDB. Log your ex
 
 Live demo: https://workout-tracker-24qo.onrender.com
 
+
 <img width="1175" height="584" alt="Screenshot 2026-10-29 at 10 48 57 PM" src="https://github.com/user-attachments/assets/7b65e1ca-89db-4fe3-8faf-fb4291826a10" />
 
 
